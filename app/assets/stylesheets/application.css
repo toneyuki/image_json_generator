@@ -1,0 +1,189 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+.generator-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.left-column {
+    width: 20%;
+}
+
+.center-column {
+    width: 45%;
+}
+
+.right-column {
+    width: 35%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.category-item {
+    margin-bottom: 8px;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    background: #fff;
+    font-weight: 400;
+    transition: 0.2s;
+}
+
+.category-link:hover {
+    background: #f5f5f5;
+}
+
+.category-link:active {
+  transform: scale(0.95);
+}
+
+.category-link.active {
+    border-color: #e86aa6;
+    color: #e86aa6;
+    background: #fff0f6;
+    box-shadow: 0 0 0 2px rgba(232, 106, 166, 0,15);
+}
+
+
+
+.category-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    frex-shrink: 0;
+}
+
+.category-dot.personality { background: #f36ca5;}
+.category-dot.hair        { background: #56cfc5;}
+.category-dot.character   { background: #f1d45a;}
+.category-dot.outfit      { background: #b486d9;}
+.category-dot.accessory   { background: #f3946e;}
+.category-dot.exclude     { background: #95a5a6;}
+
+
+
+.tag-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.tag {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.tag.hover {
+    background: #f5f5f5;
+    border-color: #aaa;
+
+}
+.tag.selected {
+  border-color: #e86aa6;
+  color: #c94f8c;
+  background: #fff4f8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.selected-tag {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 4px;
+    border-radius: 999px;
+    background: #f1f1f1;
+    font-size: 14px;
+}
+
+.action-bar {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+
+    display: flex;
+    gap: 12px;
+
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e5dfe7;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.action-bar button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #03ffd985;
+    color : #00947e;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 500;
+
+    transition: all 0.05s ease;
+}
+
+.action-bar button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.action-bar button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+.toast {
+    position: fixed;
+    bottom: 80px;
+    left: 16px;
+
+    padding: 10px 16px;
+    border-radius: 10px;
+
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3 ease;
+
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}

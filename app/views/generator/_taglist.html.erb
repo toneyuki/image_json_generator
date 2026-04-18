@@ -1,0 +1,12 @@
+<div class="tag-grid">
+    <% tags.each do |tag| %>
+        <% next_selected =
+            selected_tags.include?(tag) ? selected_tags - [tag] : selected_tags + [tag]
+        %>
+
+        <%= link_to tag,
+            generator_index_path(category: selected_category, selected_tags: next_selected),
+            class: "tag #{'selected' if selected_tags.include?(tag)}"
+        %>
+    <% end %>
+</div>

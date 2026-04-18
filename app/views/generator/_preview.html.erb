@@ -1,0 +1,14 @@
+<div>
+    <h3>選択中タグ</h3>
+    <ul>
+        <% selected_tags.each do |tag| %>
+            <span class="selected-tag"><%= tag %></span>
+        <% end %>
+    </ul>
+</div>
+
+<div>
+    <h3>JSONプレビュー</h3>
+    <pre id="json-output"><%= json_preview %></pre>
+    <button onclick="copyJson()">コピー</button>
+</div>

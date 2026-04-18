@@ -1,0 +1,24 @@
+<div class="generator-layout">
+  <aside class="left-column">
+    <h2>カテゴリ</h2>
+    <%= render "category_list", categories: @categories, selected_category: @selected_category, selected_tags: @selected_tags %>
+  </aside>
+
+  <main class="center-column">
+    <h2>タグ一覧</h2>
+    <%= render "taglist", tags: @tags, selected_tags: @selected_tags, selected_category: @selected_category %>
+  </main>
+
+  <aside class="right-column">
+    <h2>プレビュー</h2>
+    <%= render "preview", selected_tags: @selected_tags, json_preview: @json_preview %>
+  </aside>
+
+  <div class="action-bar">
+    <button onclick="copyJson()">JSONコピー</button>
+    <button>プロンプトコピー</button>
+    <button>プリセット保存</button>
+  </div>
+
+  <div id="toast" class="toast">コピーしました</div>
+</div>
