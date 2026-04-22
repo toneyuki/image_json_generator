@@ -1,0 +1,29 @@
+<%# app/views/application/_header.html.erb %>
+<header class="main-header">
+  <div class="icon-box">
+    <span class="material-symbols-outlined icon-gradient">auto_awesome</span>
+  </div>
+
+  <p class="site-title">
+    Image Json Generator
+  </p>
+
+  <nav class="header__nav">
+    <%= link_to "#", class: "nav-link" do %>
+      <span class="material-symbols-outlined">auto_awesome</span>
+      エディター
+    <% end %>
+    <%= link_to "#", class: "nav-link" do %>
+      <span class="material-symbols-outlined">folder_open</span>
+      プリセット
+    <% end %>
+    <%= link_to "#", class: "nav-link" do %>
+      <span class="material-symbols-outlined">sell</span>
+      タグ管理
+    <% end %>
+    <%= link_to "#", class: "nav-link" do %>
+      <span class="material-symbols-outlined">schedule</span>
+      履歴
+    <% end %>
+  </nav>
+</header>

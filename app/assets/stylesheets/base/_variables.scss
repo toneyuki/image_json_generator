@@ -1,0 +1,59 @@
+@use "../abstracts/function";
+
+// 【カテゴリ・タグ】カラーパレット（色ベース）
+$pal-pink:   #ff6b9d;
+$pal-cyan:   #56cfc5;
+$pal-amber:  #ffe066;
+$pal-purple: #b197fc;
+$pal-orange: #ffa984;
+$pal-slate:  #adb5bd;
+
+// テキストカラー
+$text-main:  #333333;
+$text-sub:   #666666;
+$text-light: #999999;
+
+:root {
+  // 【カテゴリ・タグ】カラーパレット（カテゴリベース）
+  --personality: #{$pal-pink};
+  --hair:        #{$pal-cyan};
+  --character:   #{$pal-amber};
+  --outfit:      #{$pal-purple};
+  --accessory:   #{$pal-orange};
+  --exclude:     #{$pal-slate};
+
+  // 【カテゴリ・タグ】カラーパレット（カテゴリベース）（Mixin用）
+  --personality-rgb: #{ rgb-to-numbers($pal-pink) };
+  --hair-rgb:        #{ rgb-to-numbers($pal-cyan) };
+  --character-rgb:   #{ rgb-to-numbers($pal-amber) };
+  --outfit-rgb:      #{ rgb-to-numbers($pal-purple) };
+  --accessory-rgb:   #{ rgb-to-numbers($pal-orange) };
+  --exclude-rgb:     #{ rgb-to-numbers($pal-slate) };
+
+  // テキストカラー
+  --text-main: #{$text-main};
+  --text-sub: #{$text-sub};
+}
+
+
+// 背景・線
+$bg_main: #fafaff;
+$bg_white: #ffffff;
+$border_color: #eeeeee;
+
+// フォント
+$font-family-title: "Fredoka", "DM Sans", sans-serif;
+$font-family-main: "DM Sans", sans-serif;
+// 文字サイズ
+$font-size-base: 14px;
+$font-size-small: 12px;
+$font-size-large: 18px;
+$font-weight-bold: 600;
+
+// 余白
+$spacing-small: 8px;
+$spacing-middle: 16px;
+$spacing-large: 24px;
+
+// ボタン・パーツの丸み
+$radius-main: 12px;

@@ -1,4 +1,10 @@
+<%# app/views/tags/index.html.erb %>
+
 <div class="generator-layout">
+  <%= render 'header'%>
+<%
+=begin
+%>
   <aside class="left-column">
     <h2>カテゴリ</h2>
     <%= render "category_list", categories: @categories, selected_category: @selected_category, selected_tags: @selected_tags %>
@@ -21,4 +27,7 @@
   </div>
 
   <div id="toast" class="toast">コピーしました</div>
+<%
+=end
+%>
 </div>

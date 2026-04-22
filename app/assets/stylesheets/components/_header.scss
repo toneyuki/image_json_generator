@@ -1,0 +1,86 @@
+@use "../base/variables" as v;
+
+// ブランドカラー
+$primary-pink: #f06292;
+$secondary-pink:  #7873f5;
+$primary-gradient: linear-gradient(125deg, $primary-pink, $secondary-pink);
+
+// タイトルフォント
+$font-family-title: "Fredoka", "DM Sans", sans-serif;
+
+// ヘッダー全体
+.main-header {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  padding: 0 25px;
+  gap: 15px;
+
+  border: 1px solid #7d7d7d29;
+}
+
+// タイトルロゴ
+.icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.15);
+
+  border-radius: 16px;
+  background: $primary-gradient;  
+}
+
+.icon-gradient {
+  font-variation-settings: "FILL" 0;
+  color: #FFF;
+}
+
+// タイトル
+.site-title {
+  font-family: v.$font-family-title;
+  font-size: 28px;
+  font-weight: 600;
+
+  background: $primary-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// ナビゲーションヘッダー
+.header__nav {
+  display: flex;
+  margin-left: auto;
+  gap: 10px;
+  align-items: center;
+}
+
+// ナビゲーションボタン
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 16px;
+  white-space: nowrap;
+
+
+  min-height: 50px;
+  gap: 12px;
+  border: 1px solid #86868630;
+  border-radius: 14px;
+
+  font-family: v.$font-family-main;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #383838;
+
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.15);
+}

@@ -64,3 +64,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "dartsass-rails", "~> 0.5.1"
+
+gem "foreman", "~> 0.90.0"
+
+group :development do
+  gem "rails_live_reload"
+end

@@ -1,0 +1,8 @@
+// 指定されたRGB変数名から、濃淡3段階のCSS変数を返す
+// @param  $color-var [Color] - RGB数値が格納されたCSS変数名 (例: --personality-rgb)
+// @output
+@mixin category-theme($color-var) {
+    --theme-deep: rgba(var($color-var), 1);
+    --theme-middle: rgba(var($color-var), 0.8);
+    --theme-soft: rgba(var($color-var), 0.1);
+}
