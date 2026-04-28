@@ -1,7 +1,14 @@
 <%# app/views/tags/index.html.erb %>
 
-<div class="generator-layout">
+<div>
   <%= render 'header'%>
+  <div class="editor">
+    <%= render "editor__sidebar", categories: @categories, selected_category: @selected_category, selected_tags: @selected_tags %>
+    <%= render "editor__main" %>
+    <%= render "editor__preview" %>
+  </div>
+</div>
+
 <%
 =begin
 %>
@@ -30,4 +37,3 @@
 <%
 =end
 %>
-</div>

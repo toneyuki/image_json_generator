@@ -37,55 +37,6 @@ pre {
   word-break: break-word;
 }
 
-.category-item {
-    margin-bottom: 8px;
-}
-
-.category-link {
-    display: inline-block;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #333;
-    background: #fff;
-    font-weight: 400;
-    transition: 0.2s;
-}
-
-.category-link:hover {
-    background: #f5f5f5;
-}
-
-.category-link:active {
-  transform: scale(0.95);
-}
-
-.category-link.active {
-    border-color: #e86aa6;
-    color: #e86aa6;
-    background: #fff0f6;
-    box-shadow: 0 0 0 2px rgba(232, 106, 166, 0,15);
-}
-
-
-
-.category-dot {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    border-radius: 999px;
-    frex-shrink: 0;
-}
-
-.category-dot.personality { background: #f36ca5;}
-.category-dot.hair        { background: #56cfc5;}
-.category-dot.character   { background: #f1d45a;}
-.category-dot.outfit      { background: #b486d9;}
-.category-dot.accessory   { background: #f3946e;}
-.category-dot.exclude     { background: #95a5a6;}
-
-
 
 .tag-grid {
     display: flex;

@@ -1,0 +1,89 @@
+// app\assets\stylesheets\components\_editor.scss
+
+@use "../base/variables" as v;
+
+// エディター全体
+.editor {
+  display: flex;
+  width: 100%;
+  height: 800px;
+  align-items: flex-start;
+
+  border: 1px solid #7d7d7d29;
+}
+
+.editor--sidebar, .editor--main, .editor--preview {
+  height: 100%;
+  overflow-y: auto;
+  border: 1px solid #7d7d7d29;
+}
+
+// エディター左カラム（カテゴリーリスト）
+.editor--sidebar {
+  width: 20%;
+}
+
+.sidebars-title {
+    padding-left: 15px;
+    font-size: 14px;
+    font-family: v.$font-family-main;
+    color: v.$text-sub;
+}
+
+.category-item {
+    margin-bottom: 8px;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    background: #fff;
+    font-weight: 400;
+    transition: 0.2s;
+}
+
+.category-link:hover {
+    background: #f5f5f5;
+}
+
+.category-link:active {
+  transform: scale(0.95);
+}
+
+.category-link.active {
+    border-color: #e86aa6;
+    color: #e86aa6;
+    background: #fff0f6;
+    box-shadow: 0 3px 0 2px, 0.15;
+}
+
+.category-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    frex-shrink: 0;
+}
+
+.category-dot.personality { background: #f36ca5;}
+.category-dot.hair        { background: #56cfc5;}
+.category-dot.character   { background: #f1d45a;}
+.category-dot.outfit      { background: #b486d9;}
+.category-dot.accessory   { background: #f3946e;}
+.category-dot.exclude     { background: #95a5a6;}
+
+
+
+// エディター中央カラム（タグ選択画面）
+.editor--main {
+  width: 45%;
+}
+
+// エディター右カラム（プレビュー画面）
+.editor--preview {
+  width: 35%;
+}

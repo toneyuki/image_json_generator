@@ -1,7 +1,17 @@
 @use "abstracts/function";
 @use "base/variables";
 @use "components/header";
+@use "components/editor";
 
 body {
   margin: 0;
+}
+
+.generator-layout {
+    display: flex;
+    flex-direction: column; 
+}
+
+* {
+  box-sizing: border-box;
 }
