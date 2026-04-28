@@ -10,11 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_27_051012) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_28_025537) do
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "display_name", null: false
     t.string "image_color", null: false
+    t.string "name", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "preset_tags", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "preset_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["preset_id", "tag_id"], name: "index_preset_tags_on_preset_id_and_tag_id", unique: true
+    t.index ["preset_id"], name: "index_preset_tags_on_preset_id"
+    t.index ["tag_id"], name: "index_preset_tags_on_tag_id"
+  end
+
+  create_table "presets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "description"
     t.string "name", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,5 +46,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_27_051012) do
     t.index ["category_id"], name: "index_tags_on_category_id"
   end
 
+  add_foreign_key "preset_tags", "presets"
+  add_foreign_key "preset_tags", "tags"
   add_foreign_key "tags", "categories"
 end

@@ -14,5 +14,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  # GET /presets            # プリセット一覧画面
+  # GET /presets/new        # 新規作成
+  # GET /presets/:id/edit   # 編集（あのタグ選択UI）
+  # PATCH /presets/:id      # 保存
+  # DELETE /presets/:id     # 削除
 
 end
