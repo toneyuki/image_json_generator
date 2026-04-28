@@ -4,6 +4,7 @@ class GeneratorController < ApplicationController
       { key: "personality", label: "性格" },
       { key: "hair", label: "髪型" },
       { key: "outfit", label: "服装" },
+      { key: "accesory", label: "アクセサリー" },
       { key: "exclude", label: "除外" }
     ]
 
