@@ -38,7 +38,7 @@ outfit = Category.find_or_initialize_by(name: "outfit") do |c|
 end
 
 exclude = Category.find_or_initialize_by(name: "exclude") do |c| 
-  c.display_name = "除外",
+  c.display_name = "除外"
   c.image_color = COLORS[:pal_slate]
   c.save!
 end
@@ -90,7 +90,6 @@ OUTFIT_DEFAULT_DATA = [
   { name: "casual",      display_name: "カジュアル" },
   { name: "formal",      display_name: "フォーマル" },
   { name: "sporty",      display_name: "スポーティ" },
-
   { name: "gothic",      display_name: "ゴシック" },
   { name: "traditional", display_name: "伝統的" }
 ]
@@ -106,7 +105,6 @@ EXCLUDE_DEFAULT_DATA = [
   { name: "weapons",     display_name: "武器" },
   { name: "violence",    display_name: "暴力" },
   { name: "nsfw",        display_name: "NSFW" },
-
   { name: "gore",        display_name: "流血表現" },
   { name: "dark_themes", display_name: "ダークテーマ" }
 ]

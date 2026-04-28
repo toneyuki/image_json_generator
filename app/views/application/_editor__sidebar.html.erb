@@ -1,22 +1,3 @@
 <%# app\views\application\_editor__sidebar.html.erb %>
 
 <%# app/views/application/_header.html.erb %>
-<aside class="editor--sidebar">
-
-  <p class="sidebars-title">
-    カテゴリ
-  </p>
-
-  <ul>
-      <% categories.each do |category| %>
-          <li class="category-item">
-          <%= link_to editor_path(category: category[:key], selected_tags: selected_tags),
-              class: "category-link #{'active' if category[:key] == selected_category}" do %>
-              <span class="category-dot <%= category[:key] %>"></span>
-              <span class="category-label"><%= category[:label] %></span>
-              <span class="category-count"><%= category[:count] || 0 %></span>
-          <% end %>
-          </li>
-      <% end %>
-  </ul>
-</aside>

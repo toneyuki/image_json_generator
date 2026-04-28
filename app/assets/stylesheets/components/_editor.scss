@@ -20,7 +20,7 @@
 
 // エディター左カラム（カテゴリーリスト）
 .editor--sidebar {
-  width: 20%;
+  width: 25%;
 }
 
 .sidebars-title {
@@ -31,23 +31,32 @@
 }
 
 .category-item {
-    margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 .category-link {
-    display: inline-block;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #333;
-    background: #fff;
-    font-weight: 400;
-    transition: 0.2s;
+  display: flex;
+  align-items: center;
+
+  width: 80%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  transition: 0.2s;
 }
 
 .category-link:hover {
-    background: #f5f5f5;
+  transform: scale(1.05);
+  box-shadow: 1px 2px 6px gray; 
 }
 
 .category-link:active {
@@ -55,35 +64,83 @@
 }
 
 .category-link.active {
-    border-color: #e86aa6;
-    color: #e86aa6;
-    background: #fff0f6;
-    box-shadow: 0 3px 0 2px, 0.15;
+  @include v.category-theme;
+
+  border: 1px solid var(--theme-middle);
+}
+
+// カテゴリ名
+.category-label {
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+// 選択タグ数
+.category-count {
+  @include v.category-theme;
+
+  display: inline-flex;
+  justify-content: center;
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+
+
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--theme-deep);
+  background: var(--theme-soft);
+  border-radius: 10px;
+
 }
 
 .category-dot {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    border-radius: 999px;
-    frex-shrink: 0;
+  @include v.category-theme;
+
+  text-align: center;
+  justify-content: center;
+  border: 1px solid var(--theme-deep);
+  background: var(--theme-deep);
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
 }
-
-.category-dot.personality { background: #f36ca5;}
-.category-dot.hair        { background: #56cfc5;}
-.category-dot.character   { background: #f1d45a;}
-.category-dot.outfit      { background: #b486d9;}
-.category-dot.accessory   { background: #f3946e;}
-.category-dot.exclude     { background: #95a5a6;}
-
-
 
 // エディター中央カラム（タグ選択画面）
 .editor--main {
-  width: 45%;
+  width: 53%;
+}
+
+.tag-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  padding: 12px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-card {
+  @include v.category-theme;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 10px;
+  background: var(--theme-soft);
+  border: 1px solid var(--theme-deep);
+  box-shadow: 0 0 0 0.5px var(--category-color);
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--theme-deep);
 }
 
 // エディター右カラム（プレビュー画面）
 .editor--preview {
-  width: 35%;
+  width: 22%;
 }

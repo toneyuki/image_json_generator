@@ -1,6 +1,0 @@
-// 16進数のカラーコードを、RGBA関数で使用するためのカンマ区切りの数値に変換
-// @param  $color [Color] - 変換元の色（例：#FFFFFF）
-// @return [String]       - カンマ区切りのRGB値（例：255, 255, 255）
-@function rgb-to-numbers($color) {
-    @return #{ red($color) }, #{ green($color) }, #{ blue($color) };
-}

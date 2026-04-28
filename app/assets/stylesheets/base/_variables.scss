@@ -1,12 +1,9 @@
-@use "../abstracts/function";
-
-// 【カテゴリ・タグ】カラーパレット（色ベース）
-$pal-pink:   #ff6b9d;
-$pal-cyan:   #56cfc5;
-$pal-amber:  #ffe066;
-$pal-purple: #b197fc;
-$pal-orange: #ffa984;
-$pal-slate:  #adb5bd;
+@mixin category-theme {
+  --theme-deep:   var(--category-color);
+  --theme-middle: color-mix(in srgb, var(--category-color) 70%, white);
+  --theme-light: color-mix(in srgb, var(--category-color) 45%, white);
+  --theme-soft:   color-mix(in srgb, var(--category-color) 20%, white);
+}
 
 // テキストカラー
 $text-main:  #333333;
@@ -14,22 +11,6 @@ $text-sub:   #666666;
 $text-light: #999999;
 
 :root {
-  // 【カテゴリ・タグ】カラーパレット（カテゴリベース）
-  --personality: #{$pal-pink};
-  --hair:        #{$pal-cyan};
-  --character:   #{$pal-amber};
-  --outfit:      #{$pal-purple};
-  --accessory:   #{$pal-orange};
-  --exclude:     #{$pal-slate};
-
-  // 【カテゴリ・タグ】カラーパレット（カテゴリベース）（Mixin用）
-  --personality-rgb: #{ rgb-to-numbers($pal-pink) };
-  --hair-rgb:        #{ rgb-to-numbers($pal-cyan) };
-  --character-rgb:   #{ rgb-to-numbers($pal-amber) };
-  --outfit-rgb:      #{ rgb-to-numbers($pal-purple) };
-  --accessory-rgb:   #{ rgb-to-numbers($pal-orange) };
-  --exclude-rgb:     #{ rgb-to-numbers($pal-slate) };
-
   // テキストカラー
   --text-main: #{$text-main};
   --text-sub: #{$text-sub};
