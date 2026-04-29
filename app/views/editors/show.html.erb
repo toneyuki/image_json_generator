@@ -2,7 +2,7 @@
 
 <div>
   <%= render 'header'%>
-  <div class="editor">
+  <div class="editor" data-controller="tags">
     <aside class="editor--sidebar">
 
       <p class="sidebars-title">
@@ -18,7 +18,13 @@
                     
                     <span class="category-dot <%= category[:key] %>"></span>
                     <span class="category-label"><%= category.display_name %></span>
-                    <span class="category-count"><%= 4 || "" %></span>
+                    <span
+                      class="category-count"
+                      data-tags-target="count"
+                      data-category-name="<%= category.name %>"
+                    >
+                    0
+                    </span>
                 <% end %>
               </li>
           <% end %>
@@ -28,9 +34,22 @@
     <main class="editor--main">
       <div class="tag-grid">
         <% @tags.each do |tag| %>
-          <div class="tag-card" style="--category-color: <%= @selected_category.image_color %>;">
+          <input
+            type="checkbox"
+            id="tag_<%= tag.id %>"
+            class="tag-toggle"
+            value="<%= tag.id %>"
+            data-action="change->tags#toggle"
+            data-category-name="<%= @selected_category.name %>"
+          >
+          
+          <label
+            for="tag_<%= tag.id %>"
+            class="tag-input-like"
+            style="--category-color: <%= @selected_category.image_color %>;"
+          >
             <%= tag.display_name %>
-          </div>
+          </label>
         <% end %>
       </div>
     </main>

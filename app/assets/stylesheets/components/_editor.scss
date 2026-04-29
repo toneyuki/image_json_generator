@@ -122,22 +122,30 @@ ul {
   justify-content: center;
 }
 
-.tag-card {
-  @include v.category-theme;
+.tag-toggle {
+  display: none;
+}
 
+.tag-input-like {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
+  min-width: 120px;
+
   padding: 10px;
+  background: var(--theme-soft);
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ONのとき */
+.tag-toggle:checked + .tag-input-like {
+  @include v.category-theme;
+
   background: var(--theme-soft);
   border: 1px solid var(--theme-deep);
   box-shadow: 0 0 0 0.5px var(--category-color);
-  border-radius: 12px;
-
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--theme-deep);
 }
 
 // エディター右カラム（プレビュー画面）

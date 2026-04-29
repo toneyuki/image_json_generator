@@ -9,6 +9,12 @@ class EditorsController < ApplicationController
 
     @tags = @selected_category.tags
 
+    # 各カテゴリと紐づくタグのハッシュ
+    @category_tag_list = {}
+    @categories.each do |category|
+      @category_tag_list[category.name] = category.tags.map(&:name)
+    end
+
     @selected_tags = 
       if @preset
         @preset.tags.includes(:category)
