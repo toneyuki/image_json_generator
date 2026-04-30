@@ -16,7 +16,7 @@
                     class: "category-link #{'active' if category == @selected_category}",
                     style: "--category-color: #{category.image_color};" do %>
                     
-                    <span class="category-dot <%= category[:key] %>"></span>
+                    <span class="category-dot <%= category[:key] %>%"></span>
                     <span class="category-label"><%= category.display_name %></span>
                     <span
                       class="category-count"
@@ -38,7 +38,7 @@
             type="checkbox"
             id="tag_<%= tag.id %>"
             class="tag-toggle"
-            value="<%= tag.id %>"
+            value="<%= tag.name %>"
             data-action="change->tags#toggle"
             data-category-name="<%= @selected_category.name %>"
           >
@@ -53,6 +53,26 @@
         <% end %>
       </div>
     </main>
-    <%= render "editor__preview" %>
+
+    <script>
+      const tagMap = <%= raw @tag_all_map.to_json %>
+      const categoryMap = <%= raw @category_all_map.to_json %>
+    </script>
+
+    <aside class="editor--preview">
+
+      <div class="selected-preview">
+        <div class="sidebars-title">選択中のタグ</div>
+        <div class="selected-preview-grid">
+          <pre data-tags-target="selectedTagPreview"></pre>
+        </div>
+      </div>
+
+      <div class="json-preview">
+        <div class="sidebars-title">JSONプレビュー</div>
+        <pre data-tags-target="preview" class="json-preview-text"></pre>
+      </div>
+
+    </aside>
   </div>
 </div>

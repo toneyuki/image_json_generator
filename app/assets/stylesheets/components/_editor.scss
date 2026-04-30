@@ -37,8 +37,9 @@
 }
 
 ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  padding-left: 0;
 }
 
 .category-link {
@@ -151,4 +152,89 @@ ul {
 // エディター右カラム（プレビュー画面）
 .editor--preview {
   width: 22%;
+}
+
+.selected-preview {
+  display: flex;
+  flex-direction: column;
+
+
+  // 仮
+  // background-color: #d9cfcf;
+  // border: 1px solid #181818;
+}
+
+.selected-preview-grid {
+  // 仮
+  // background-color: #ff12a8;
+  // border: 1px solid #000;
+}
+
+.preview-selected-category-title {
+  display: flex;
+  align-items: center;
+
+  padding-left: 15px;
+  column-gap: 6px;
+
+  font-size: 13px;
+  font-family: v.$font-family-main;
+  color: v.$text-main;
+  font-weight: bold;
+  // 仮
+  // background-color: #54ff20;
+  // border: 1px solid #000;
+}
+
+.preview-category-dot {
+  @include v.category-theme;
+
+  text-align: center;
+  justify-content: center;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  border: 1px solid var(--theme-deep);
+  background: var(--theme-deep);
+}
+
+.preview-selected-tag-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  // 仮
+  // background-color: #ff2420;
+}
+
+.preview-selected-tag {
+  @include v.category-theme;  
+  border-radius: 9px;
+
+  color: var(--theme-deep);
+  font-size: medium;
+  font-weight: bold;
+
+  margin-left: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  padding: 4px 10px;
+  background: var(--theme-soft); 
+}
+
+.json-preview-text {
+  display: flex;
+  margin: 15px;
+
+  padding: 10px;
+  border-radius: 10px;
+
+  background-color: v.$bg-code;
+
+  font-size: 13px;
+  font-family: v.$font-family-main;
+  color: v.$text-code;
+  font-weight:normal;
 }
