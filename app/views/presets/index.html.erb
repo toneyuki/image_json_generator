@@ -1,2 +1,53 @@
-<h1>Presets#index</h1>
-<p>Find me in app/views/presets/index.html.erb</p>
+<div class="generator-layout" data-controller="tags">
+  <%= render 'header'%>
+  <nav class="preset-toolbar">
+    <span
+      class="preset-toolbar__search"
+      data-controller="presets"
+    >
+      <input 
+        type="input"
+        class="preset-toolbar__search-input"
+        placeholder="プリセットを検索"
+        data-presets-target="input"
+      >
+      <button
+        class="preset-toolbar__search-clear"
+        data-action="click->presets#clear"
+        >
+        クリア
+      </button>
+    </span>
+    <span class="preset-toolbar__sort">
+      <select id="preset-toolbar__sort-select">更新順
+        <option value="updated">更新順</option>
+        <option value="name">名前順</option>
+      </select>
+    </span>
+  </nav>
+  <main class ="preset-card-list">
+    <% @presets.each do |preset| %>
+
+      <div class="preset-card">
+        <div class="preset-card__header">
+          <span class="preset-card__icon">📁</span>
+          <span class="preset-card__name"><%= preset.name %></span>
+        </div>
+        <div class="preset-card__description"><%= preset.description %></div>
+        <div class="preset-card__category-area">
+          <% preset.categories.distinct.each do |category| %>
+            <div class="category"
+              style="--category-color: <%= category.image_color %>"
+            >
+              <%= category.display_name %>
+            </div>
+          <% end %>
+        </div> 
+        <div class="preset-card__footer">
+          <span class="preset-card__footer-tagcount">#<%= preset.tags.count %>タグ</span>
+          <span class="preset-card__footer-updatedate">📅<%= preset.updated_at %></span>
+        </div>
+      </div>
+    <% end %>
+  </main>
+</div>

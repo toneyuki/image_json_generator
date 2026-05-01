@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get "presets/index"
-  get "presets/show"
-  get "presets/new"
-  get "presets/edit"
   root "editors#show"
+  resources :presets, only: [:index, :show, :new, :edit]
   resource :editor, only: [:show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

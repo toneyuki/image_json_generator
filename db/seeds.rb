@@ -115,3 +115,9 @@ EXCLUDE_DEFAULT_DATA.each do |d|
     tag.save!
   end
 end
+
+personality = Category.find_or_initialize_by(name: "personality") do |c| 
+  c.display_name = "個性"
+  c.image_color = COLORS[:pal_pink]
+  c.save!
+end
