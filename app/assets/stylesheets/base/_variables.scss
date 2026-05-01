@@ -5,6 +5,10 @@
   --theme-soft:   color-mix(in srgb, var(--category-color) 20%, white);
 }
 
+// ボタン色
+$btn-color-default: #ffffff;
+$btn-color-copy-json: #56cfc5;
+
 // テキストカラー
 $text-main:  #333333;
 $text-sub:   #666666;

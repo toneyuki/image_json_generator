@@ -1,8 +1,8 @@
 <%# app\views\editors\show.html.erb %>
 
-<div>
+<div class="generator-layout" data-controller="tags">
   <%= render 'header'%>
-  <div class="editor" data-controller="tags">
+  <div class="editor">
     <aside class="editor--sidebar">
 
       <p class="sidebars-title">
@@ -75,4 +75,14 @@
 
     </aside>
   </div>
+  <section class="editor-cta">
+    <button class="editor-cta-copy-json"
+            data-action="click->tags#copyJsonPreview"
+            data-tags-target=""
+            >
+      <span class="material-symbols-outlined">content_copy</span>
+      JSONコピー
+    </button>
+  </section>
+  <div data-tags-target="toast" class="toast"></div>
 </div>

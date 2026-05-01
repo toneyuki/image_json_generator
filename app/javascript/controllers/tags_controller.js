@@ -7,7 +7,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
 
-  static targets = ["count", "preview", "selectedTagPreview"]
+  static targets = ["count", "preview", "selectedTagPreview", "toast"]
 
   connect() {
     this.load()
@@ -108,5 +108,25 @@ export default class extends Controller {
     })
 
     this.previewTarget.textContent = JSON.stringify(jsonData, null, 2)
+  }
+
+  async copyJsonPreview(event) {
+    const button = event.currentTarget
+    const jsonPreview = this.previewTarget.innerText
+
+    try {
+      await navigator.clipboard.writeText(jsonPreview)
+      this.flashButton(button, "success")
+    } catch {
+      this.flashButton(button, "failed")
+    }
+  }
+
+  flashButton(button, status) {
+    button.classList.add(`is-${status}`)
+
+    setTimeout(() => {
+      button.classList.remove(`is-${status}`)
+    }, 2000)
   }
 }
